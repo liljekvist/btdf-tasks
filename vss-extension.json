@@ -1,0 +1,107 @@
+{
+    "manifestVersion": 1,
+    "id": "btdf-tasks-artifact",
+    "name": "Fork of Deployment Framework for BizTalk",
+    "version": "1.0.0",
+    "publisher": "liljekvist",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Deployment Framework for BizTalk Azure DevOps pipeline tasks, with artifact support.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "tags": [
+        "BizTalk",
+        "BTDF",
+        "MSI",
+        "tasks"
+    ],
+    "icons": {
+        "default": "extension-icon.png"        
+    },
+    "links": {
+        "getstarted": {
+            "uri": "https://github.com/vercellone/vsts-btdf-tasks"
+        }
+	},
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },
+    "galleryFlags": [
+        "Public"
+    ],
+    "files": [
+        {
+            "path": "BizTalkTerminateSuspended"
+        },
+        {
+            "path": "BTDFDeploy"
+        },
+        {
+            "path": "BTDFUndeploy"
+        },
+        {
+            "path": "MSIInstall"
+        },
+        {
+            "path": "MSIUninstall"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "BizTalkTerminateSuspended",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "BizTalkTerminateSuspended"
+            }
+        },
+        {
+            "id": "BTDFDeploy",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "BTDFDeploy"
+            }
+        },
+        {
+            "id": "BTDFUndeploy",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "BTDFUndeploy"
+            }
+        },
+        {
+            "id": "MSIInstall",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "MSIInstall"
+            }
+        },
+        {
+            "id": "MSIUninstall",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "MSIUninstall"
+            }
+        }
+    ]
+}
