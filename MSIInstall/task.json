@@ -5,7 +5,7 @@
   "description": "Install an MSI using the command msiexec.exe /i [msi file]",
   "author": "Mikael Bohlin Liljekvist",
   "helpMarkDown": "",
-  "category": "Azure Pipelines",
+  "category": "Build and Release",
   "visibility": [
     "Release"
   ],

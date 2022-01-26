@@ -5,7 +5,7 @@
   "description": "Deployment Framework for BizTalk btdfproj project target: Undeploy(All Artifacts)",
   "author": "Mikael Bohlin Liljekvist",
   "helpMarkDown": "",
-  "category": "Azure Pipelines",
+  "category": "Build and Release",
   "visibility": [
     "Release"
   ],

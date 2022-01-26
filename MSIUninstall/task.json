@@ -5,7 +5,7 @@
   "description": "Uninstall an MSI using the command msiexec.exe /x[InstallGuid]",
   "author": "Mikael Bohlin Liljekvist",
   "helpMarkDown": "",
-  "category": "Azure Pipelines",
+  "category": "Build and Release",
   "visibility": [
     "Release"
   ],

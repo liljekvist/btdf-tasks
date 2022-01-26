@@ -3,7 +3,7 @@
     "id": "btdf-tasks-artifact",
     "name": "Fork of Deployment Framework for BizTalk",
     "version": "1.0.0",
-    "publisher": "Mikael Bohlin Liljekvist",
+    "publisher": "Mikael-Bohlin-Liljekvist",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
@@ -11,7 +11,7 @@
     ],    
     "description": "Deployment Framework for BizTalk Azure DevOps pipeline tasks, with artifact support.",
     "categories": [
-        "Azure Pipelines"
+        "Build and Release"
     ],
     "tags": [
         "BizTalk",
@@ -25,9 +25,6 @@
     "links": {
         "getstarted": {
             "uri": "https://github.com/vercellone/vsts-btdf-tasks"
-        },
-		"wiki": {
-            "uri": "https://wiki.uu.se/pages/viewpage.action?pageId=335184306"
         }
 	},
     "content": {
@@ -40,7 +37,7 @@
     ],
     "files": [
         {
-            "path": "BizTalkTerminateSuspended"
+            "path": "TerminateSuspended"
         },
         {
             "path": "BTDFDeploy"
@@ -57,13 +54,13 @@
     ],
     "contributions": [
         {
-            "id": "BizTalkTerminateSuspended(All Artifacts)",
+            "id": "TerminateSuspended(All Artifacts)",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "BizTalkTerminateSuspended(All Artifacts)"
+                "name": "TerminateSuspended(All Artifacts)"
             }
         },
         {
