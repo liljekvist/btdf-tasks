@@ -3,7 +3,7 @@
     "id": "btdf-tasks-artifact",
     "name": "Fork of Deployment Framework for BizTalk",
     "version": "1.0.0",
-    "publisher": "liljekvist",
+    "publisher": "Mikael Bohlin Liljekvist",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
@@ -25,6 +25,9 @@
     "links": {
         "getstarted": {
             "uri": "https://github.com/vercellone/vsts-btdf-tasks"
+        },
+		"wiki": {
+            "uri": "https://wiki.uu.se/pages/viewpage.action?pageId=335184306"
         }
 	},
     "content": {
@@ -54,53 +57,53 @@
     ],
     "contributions": [
         {
-            "id": "BizTalkTerminateSuspended",
+            "id": "BizTalkTerminateSuspended(All Artifacts)",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "BizTalkTerminateSuspended"
+                "name": "BizTalkTerminateSuspended(All Artifacts)"
             }
         },
         {
-            "id": "BTDFDeploy",
+            "id": "BTDFDeploy(All Artifacts)",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "BTDFDeploy"
+                "name": "BTDFDeploy(All Artifacts)"
             }
         },
         {
-            "id": "BTDFUndeploy",
+            "id": "BTDFUndeploy(All Artifacts)",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "BTDFUndeploy"
+                "name": "BTDFUndeploy(All Artifacts)"
             }
         },
         {
-            "id": "MSIInstall",
+            "id": "MSIInstall(All Artifacts)",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "MSIInstall"
+                "name": "MSIInstall(All Artifacts)"
             }
         },
         {
-            "id": "MSIUninstall",
+            "id": "MSIUninstall(All Artifacts)",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "MSIUninstall"
+                "name": "MSIUninstall(All Artifacts)"
             }
         }
     ]
