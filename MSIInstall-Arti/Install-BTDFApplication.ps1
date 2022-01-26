@@ -29,6 +29,7 @@ foreach ($Name in $files){
         '/i "{0}"' -f $MSI.FullName
         "/qn"
     )
+    $Destination = Join-Path $ProgramFiles $Name
     if (-not [string]::IsNullOrWhiteSpace($Destination)) {
         $argu += "INSTALLDIR=""$Destination"""
     }
