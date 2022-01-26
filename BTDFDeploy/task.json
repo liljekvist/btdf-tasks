@@ -1,6 +1,6 @@
 {
   "id": "ece8979f-88a6-4ff2-8742-23dac3c088b4",
-  "name": "BTDFDeploy(All Artifacts)",
+  "name": "BTDFDeploy",
   "friendlyName": "BTDF - Deploy (All Artifacts)",
   "description": "Deployment Framework for BizTalk btdfproj project target: Deploy(All Artifacts)",
   "author": "Mikael Bohlin Liljekvist",

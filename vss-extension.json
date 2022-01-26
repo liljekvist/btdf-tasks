@@ -54,53 +54,53 @@
     ],
     "contributions": [
         {
-            "id": "TerminateSuspended(All Artifacts)",
+            "id": "TerminateSuspended",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "TerminateSuspended(All Artifacts)"
+                "name": "TerminateSuspended"
             }
         },
         {
-            "id": "BTDFDeploy(All Artifacts)",
+            "id": "BTDFDeploy",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "BTDFDeploy(All Artifacts)"
+                "name": "BTDFDeploy"
             }
         },
         {
-            "id": "BTDFUndeploy(All Artifacts)",
+            "id": "BTDFUndeploy",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "BTDFUndeploy(All Artifacts)"
+                "name": "BTDFUndeploy"
             }
         },
         {
-            "id": "MSIInstall(All Artifacts)",
+            "id": "MSIInstall",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "MSIInstall(All Artifacts)"
+                "name": "MSIInstall"
             }
         },
         {
-            "id": "MSIUninstall(All Artifacts)",
+            "id": "MSIUninstall",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "MSIUninstall(All Artifacts)"
+                "name": "MSIUninstall"
             }
         }
     ]

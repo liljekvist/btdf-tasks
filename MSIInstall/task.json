@@ -1,6 +1,6 @@
 {
   "id": "6f085399-5bf7-44e2-9539-6b1125e4aa2f",
-  "name": "MSIInstall(All Artifacts)",
+  "name": "MSIInstall",
   "friendlyName": "MSI Install (All Artifacts)",
   "description": "Install an MSI using the command msiexec.exe /i [msi file]",
   "author": "Mikael Bohlin Liljekvist",
