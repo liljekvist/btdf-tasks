@@ -1,6 +1,6 @@
 {
-  "id": "f6504365-d837-4efa-bcf4-fef6ec064501",
-  "name": "BTDFUndeploy",
+  "id": "9bf7c1b6-e6ba-4e7d-85ed-12b69afcd434",
+  "name": "BTDFUndeploy-Arti",
   "friendlyName": "BTDF - Undeploy (All Artifacts)",
   "description": "Deployment Framework for BizTalk btdfproj project target: Undeploy(All Artifacts)",
   "author": "Mikael Bohlin Liljekvist",

@@ -1,6 +1,6 @@
 {
-  "id": "ec69f507-f95f-4385-8d25-6df0402be452",
-  "name": "TerminateSuspended",
+  "id": "382b1673-b298-4cec-9fb3-b56f9a3dac44",
+  "name": "TerminateSuspended-Arti",
   "friendlyName": "Terminate Suspended (All Artifacts)",
   "description": "Terminates suspended service instances and optionally saves the relevant messages and metadata",
   "author": "Mikael Bohlin Liljekvist",

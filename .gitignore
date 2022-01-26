@@ -1,23 +1,21 @@
 *.vsix
 
-**/
+MSIInstall-Arti\Get-MSBuildPath.ps1
+MSIInstall-Arti\Get-MSIFileInformation.ps1
+MSIInstall-Arti\Init-BTDFTasks.ps1
 
-MSIInstall\Get-MSBuildPath.ps1
-MSIInstall\Get-MSIFileInformation.ps1
-MSIInstall\Init-BTDFTasks.ps1
+MSIUninstall-Arti\Get-MSBuildPath.ps1
+MSIUninstall-Arti\Get-MSIFileInformation.ps1
+MSIUninstall-Arti\Init-BTDFTasks.ps1
 
-MSIUninstall\Get-MSBuildPath.ps1
-MSIUninstall\Get-MSIFileInformation.ps1
-MSIUninstall\Init-BTDFTasks.ps1
+TerminateSuspended-Arti\Get-MSBuildPath.ps1
+TerminateSuspended-Arti\Get-MSIFileInformation.ps1
+TerminateSuspended-Arti\Init-BTDFTasks.ps1
 
-TerminateSuspended\Get-MSBuildPath.ps1
-TerminateSuspended\Get-MSIFileInformation.ps1
-TerminateSuspended\Init-BTDFTasks.ps1
+BTDFUndeploy-Arti\Get-MSBuildPath.ps1
+BTDFUndeploy-Arti\Get-MSIFileInformation.ps1
+BTDFUndeploy-Arti\Init-BTDFTasks.ps1
 
-BTDFUndeploy\Get-MSBuildPath.ps1
-BTDFUndeploy\Get-MSIFileInformation.ps1
-BTDFUndeploy\Init-BTDFTasks.ps1
-
-BTDFDeploy\Get-MSBuildPath.ps1
-BTDFDeploy\Get-MSIFileInformation.ps1
-BTDFDeploy\Init-BTDFTasks.ps1
+BTDFDeploy-Arti\Get-MSBuildPath.ps1
+BTDFDeploy-Arti\Get-MSIFileInformation.ps1
+BTDFDeploy-Arti\Init-BTDFTasks.ps1
