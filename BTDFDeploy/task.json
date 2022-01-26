@@ -1,9 +1,9 @@
 {
-  "id": "cce8979f-88a6-4ff2-8742-23dac3c088b4",
-  "name": "BTDFDeploy",
-  "friendlyName": "BTDF - Deploy",
-  "description": "Deployment Framework for BizTalk btdfproj project target: Deploy",
-  "author": "Jason Vercellone",
+  "id": "ece8979f-88a6-4ff2-8742-23dac3c088b4",
+  "name": "BTDFDeploy(All Artifacts)",
+  "friendlyName": "BTDF - Deploy (All Artifacts)",
+  "description": "Deployment Framework for BizTalk btdfproj project target: Deploy(All Artifacts)",
+  "author": "Mikael Bohlin Liljekvist",
   "helpMarkDown": "",
   "category": "Azure Pipelines",
   "visibility": [
@@ -19,14 +19,6 @@
   "instanceNameFormat": "Deploy: $(Name)",
   "inputs": [
     {
-      "name": "Name",
-      "type": "string",
-      "label": "Name",
-      "defaultValue": "",
-      "required": true,
-      "helpMarkDown": "BizTalk application name."
-    },
-    {
       "name": "Environment",
       "type": "string",
       "label": "Environment",
@@ -38,9 +30,9 @@
       "name": "Destination",
       "type": "filePath",
       "label": "Destination",
-      "defaultValue": "",
-      "required": false,
-      "helpMarkDown": "Path to the directory where the product is installed (optional; default is a subfolder by the same name as the product in `$env:ProgramFiles or `$env:ProgramFiles(x86))."
+      "defaultValue": "C:\\Program Files (x86)",
+      "required": true,
+      "helpMarkDown": "Path to the directory where the product is installed. EX: C:\\Program Files (x86)"
     },
     {
       "name": "BTDeployMgmtDB",

@@ -1,9 +1,9 @@
 {
-  "id": "cd4cb834-3b8b-48d1-b46d-21a97da1774e",
-  "name": "MSIUninstall",
-  "friendlyName": "MSI Uninstall",
+  "id": "ed4cb834-3b8b-48d1-b46d-21a97da1774e",
+  "name": "MSIUninstall(All Artifacts)",
+  "friendlyName": "MSI Uninstall (All Artifacts)",
   "description": "Uninstall an MSI using the command msiexec.exe /x[InstallGuid]",
-  "author": "Jason Vercellone",
+  "author": "Mikael Bohlin Liljekvist",
   "helpMarkDown": "",
   "category": "Azure Pipelines",
   "visibility": [
@@ -16,16 +16,8 @@
     "Patch": "0"
   },
   "minimumAgentVersion": "1.95.0",
-  "instanceNameFormat": "Uninstall: $(Product)",
+  "instanceNameFormat": "Uninstall",
   "inputs": [
-    {
-      "name": "Product",
-      "type": "string",
-      "label": "Product",
-      "defaultValue": "",
-      "required": true,
-      "helpMarkDown": "Product install Guid, name, or path to an MSI to uninstall"
-    },
     {
       "name": "Arguments",
       "type": "string",

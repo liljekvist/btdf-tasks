@@ -1,14 +1,13 @@
 ﻿[cmdletBinding()]
 param(
-	[Parameter(Mandatory)]
-	[string]$Name,
-	
-    [Parameter(Mandatory=$false,HelpMessage="Path to the directory where the product is installed (optional; default is a subfolder by the same name as the product in `$env:ProgramFiles or `$env:ProgramFiles(x86)).")]
+    [Parameter(Mandatory=$true,HelpMessage="Path to the directory where the product is installed. EX: C:\Program Files (x86)")]
 	[string]$Destination,
 
 	[string]$BTDeployMgmtDB=$true
 )
 . "$PSScriptRoot\Init-BTDFTasks.ps1"
+
+$Name = '' # Initar den tidigt då jag inte vet hur funktionen får med den.
 
 function Test-BTDFApplicationDeployed {
     param(
@@ -32,50 +31,53 @@ function Test-BTDFApplicationDeployed {
     }
 }
 
-if (-Not $Destination) {
-	$Destination = $ProgramFiles
-}
+$path = "$Env:AGENT_RELEASEDIRECTORY";
 
-$ApplicationPath = Join-Path $Destination $Name
-Write-Host "Name: $Name, Destination: $Destination, BTDeployMgmtDB: $BTDeployMgmtDB" 
+$files = Get-ChildItem $path;
+
+foreach ($Name in $files){
+
+	$ApplicationPath = Join-Path $Destination $Name
+	Write-Host "Name: $Name, Destination: $Destination, BTDeployMgmtDB: $BTDeployMgmtDB" 
 
 
-## On the server whe MgmtDB must be undeployed, check if the application is installed. On the other servers, test if the path exists.
-if ($BTDeployMgmtDB -eq "true" -And -Not(Test-BTDFApplicationDeployed -Name $Name))
-{
-    Write-Host ("##vso[task.logissue type=warning;] BTDF application '{0}' not in catalog.  Undeploy skipped." -f $Name)
-}
-else
-{
-	if (Test-Path -Path $ApplicationPath -ErrorAction SilentlyContinue) {
-		$BTDFProject = Get-ChildItem -Path $ApplicationPath -Filter '*.btdfproj' -Recurse | Select-Object -ExpandProperty FullName -First 1
-		$DeployResults = Get-ChildItem -Path $ApplicationPath -Filter 'DeployResults' -Recurse | Select-Object -ExpandProperty FullName -First 1
-		if ($null -eq $DeployResults) {
-			Write-Host ("##vso[task.logissue type=warning;] BTDF application '{0}' not found." -f $ApplicationPath)
-		} else {
-			$DeployResults = Join-Path $DeployResults 'DeployResults.txt'
-
-			$BTDFMSBuild = Get-MSBuildPath
-			$arguments = [string[]]@(
-				"/l:FileLogger,Microsoft.Build.Engine;logfile=`"$DeployResults`""
-				"/p:Configuration=Server"
-				"/p:DeployBizTalkMgmtDB=$BTDeployMgmtDB"
-				'/target:Undeploy'
-				"""$BTDFProject"""
-			)
-			$cmd = $BTDFMSBuild,($arguments -join ' ') -join ' '
-			Write-Host $cmd
-			$exitCode = (Start-Process -FilePath "$BTDFMSBuild" -ArgumentList $arguments -Wait -PassThru).ExitCode
-			Write-Host (Get-Content -Path $DeployResults | Out-String)
-
-			if($exitCode -ne 0) {
-				Write-Host "##vso[task.logissue type=error;] Error while calling MSBuild, Exit Code: $exitCode"
-				Write-Host ("##vso[task.complete result=Failed;] Undeploy-BTDFApplication error while calling MSBuild, Exit Code: {0}" -f $exitCode)
+	## On the server whe MgmtDB must be undeployed, check if the application is installed. On the other servers, test if the path exists.
+	if ($BTDeployMgmtDB -eq "true" -And -Not(Test-BTDFApplicationDeployed -Name $Name))
+	{
+		Write-Host ("##vso[task.logissue type=warning;] BTDF application '{0}' not in catalog.  Undeploy skipped." -f $Name)
+	}
+	else
+	{
+		if (Test-Path -Path $ApplicationPath -ErrorAction SilentlyContinue) {
+			$BTDFProject = Get-ChildItem -Path $ApplicationPath -Filter '*.btdfproj' -Recurse | Select-Object -ExpandProperty FullName -First 1
+			$DeployResults = Get-ChildItem -Path $ApplicationPath -Filter 'DeployResults' -Recurse | Select-Object -ExpandProperty FullName -First 1
+			if ($null -eq $DeployResults) {
+				Write-Host ("##vso[task.logissue type=warning;] BTDF application '{0}' not found." -f $ApplicationPath)
 			} else {
-				Write-Host "##vso[task.complete result=Succeeded;]DONE"
+				$DeployResults = Join-Path $DeployResults 'DeployResults.txt'
+
+				$BTDFMSBuild = Get-MSBuildPath
+				$arguments = [string[]]@(
+					"/l:FileLogger,Microsoft.Build.Engine;logfile=`"$DeployResults`""
+					"/p:Configuration=Server"
+					"/p:DeployBizTalkMgmtDB=$BTDeployMgmtDB"
+					'/target:Undeploy'
+					"""$BTDFProject"""
+				)
+				$cmd = $BTDFMSBuild,($arguments -join ' ') -join ' '
+				Write-Host $cmd
+				$exitCode = (Start-Process -FilePath "$BTDFMSBuild" -ArgumentList $arguments -Wait -PassThru).ExitCode
+				Write-Host (Get-Content -Path $DeployResults | Out-String)
+
+				if($exitCode -ne 0) {
+					Write-Host "##vso[task.logissue type=error;] Error while calling MSBuild, Exit Code: $exitCode"
+					Write-Host ("##vso[task.complete result=Failed;] Undeploy-BTDFApplication error while calling MSBuild, Exit Code: {0}" -f $exitCode)
+				} else {
+					Write-Host "##vso[task.complete result=Succeeded;]DONE"
+				}
 			}
+		} else {
+			Write-Host ("##vso[task.logissue type=warning;] BTDF application '{0}' not found at {1}.  Undeploy skipped." -f $Name,$ApplicationPath)
 		}
-	} else {
-		Write-Host ("##vso[task.logissue type=warning;] BTDF application '{0}' not found at {1}.  Undeploy skipped." -f $Name,$ApplicationPath)
 	}
 }

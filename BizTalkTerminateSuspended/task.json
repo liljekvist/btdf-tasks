@@ -1,9 +1,9 @@
 {
-  "id": "cc49f507-f95f-4385-8d25-6df0402be452",
-  "name": "BizTalkTerminateSuspended",
-  "friendlyName": "Terminate Suspended",
+  "id": "ec49f507-f95f-4385-8d25-6df0402be452",
+  "name": "BizTalkTerminateSuspended(All Artifacts)",
+  "friendlyName": "Terminate Suspended (All Artifacts)",
   "description": "Terminates suspended service instances and optionally saves the relevant messages and metadata",
-  "author": "Jason Vercellone",
+  "author": "Mikael Bohlin Liljekvist",
   "helpMarkDown": "",
   "category": "Azure Pipelines",
   "visibility": [
