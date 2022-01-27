@@ -12,7 +12,7 @@
   "demands": [],
   "version": {
     "Major": "1",
-    "Minor": "0",
+    "Minor": "4",
     "Patch": "1"
   },
   "minimumAgentVersion": "1.95.0",
@@ -25,6 +25,14 @@
       "defaultValue": "C:\\Program Files (x86)",
       "required": true,
       "helpMarkDown": "Path to the directory where the product is installed. EX: C:\\Program Files (x86)"
+    },
+    {
+      "name": "RunOrder",
+      "type": "string",
+      "label": "Order in which to run the UnDeploy",
+      "defaultValue": "TEST,LAB,INT,Shared",
+      "required": true,
+      "helpMarkDown": "In which order to run applications. String will match if it exists in name of artifact. Seperated by \",\" (No spaces!). Runs left to right. Case sensetive."
     },
     {
 			"name": "BTDeployMgmtDB",

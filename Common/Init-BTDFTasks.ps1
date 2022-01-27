@@ -3,6 +3,7 @@
 
 $ProgramFiles = $env:ProgramFiles
 $UninstallPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"
+$Version = "2.2.0"
 if ([Environment]::Is64BitOperatingSystem) {
     $ProgramFiles = ${env:ProgramFiles(x86)}
     $UninstallPath = "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall"
