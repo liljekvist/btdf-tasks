@@ -12,7 +12,7 @@
   "demands": [],
   "version": {
     "Major": "1",
-    "Minor": "4",
+    "Minor": "5",
     "Patch": "1"
   },
   "minimumAgentVersion": "1.95.0",
@@ -33,6 +33,28 @@
       "defaultValue": "TEST,LAB,INT,Shared",
       "required": true,
       "helpMarkDown": "In which order to run applications. String will match if it exists in name of artifact. Seperated by \",\" (No spaces!). Runs left to right. Case sensetive."
+    },
+    {
+      "name": "ClusterName",
+      "type": "string",
+      "label": "Name of cluster running biztalk instances",
+      "defaultValue": "UUC-BIZSRV021-T",
+      "required": false,
+      "helpMarkDown": "Name of the cluster controlling bztalk. (Leave empty if target is not in cluster and set ShouldRunOnLastNode to true. This will make it run.)"
+    },
+    {
+			"name": "ShouldRunOnLastNode",
+			"type": "pickList",
+			"label": "Should run on last node",
+			"defaultValue": "false",
+			"helpMarkDown": "Should this run on the last node? (False = Run on all nodes not running biztalk in the cluster, True = Run on all nodes with a active biztalk service.)",
+			"properties": {
+                "EditableOptions": "True"
+            },
+			"options": {
+				"true": "True",
+				"false": "False"
+			}
     },
     {
 			"name": "BTDeployMgmtDB",
