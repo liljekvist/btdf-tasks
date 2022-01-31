@@ -1,5 +1,7 @@
 # Deployment Framework for BizTalk Azure DevOps release tasks
 
+This repository is a fork of https://github.com/vercellone/vsts-btdf-tasks
+
 This extension facilitates the deployment (not build) of BizTalk applications to server(s) with a [private agent](https://www.visualstudio.com/en-us/docs/build/concepts/agents/agents) (deployment group members qualify).  It started as a decomposition of the Randy Paulo's monolithic [Install-BizTalkApplication](https://gallery.technet.microsoft.com/Powershell-Script-to-903a99c2) PowerShell script into more granular tasks for greater flexibility and enhanced feedback within the scope of a Azure DevOps pipeline.
 
 The BTDF Deploy/Undeploy tasks require artifacts built using the [Deployment Framework for BizTalk (BTDF)](http://biztalkdeployment.codeplex.com/).  For those unfamiliar, I recommend starting with Thomas F. Abraham's recently published [Deployment Framework for BizTalk Visual Studio extensions](https://marketplace.visualstudio.com/items?itemName=DeployFxForBizTalkTeam.DeploymentFrameworkforBizTalk).
