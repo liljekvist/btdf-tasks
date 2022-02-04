@@ -20,25 +20,32 @@ param(
 )
 . "$PSScriptRoot\Init-BTDFTasks.ps1"
 
+
 function IsLastNode {
 	if([string]::IsNullOrEmpty($ClusterName)){
+        Write-Host "Returned true no clustername";
 		return $true # This can be redone since this requires ShouldRunOnLastNode to be true
 	}
 	$OwnerNode = (Get-ClusterGroup -Name $ClusterName).OwnerNode
 	Write-Host $env:computername
 	Write-Host $OwnerNode
 	if($OwnerNode -eq $env:computername){
+        Write-Host "Returned true islastnode";
 		return $true
 	}
+    Write-Host "Returned false islastnode";
 	return $false
 }
 
 $RunOrderArray = $RunOrder.split(",")
 # "Shared", "INT", "LAB", "TEST"
 
+$IsLastNodeVal = IsLastNode();
 [System.Convert]::ToBoolean($ShouldRunOnLastNode);
-
-if(IsLastNode -eq $ShouldRunOnLastNode){
+[System.Convert]::ToBoolean($IsLastNodeVal);
+Write-Host $IsLastNodeVal;
+Write-Host $ShouldRunOnLastNode;
+if($IsLastNodeVal -eq $ShouldRunOnLastNode){
     $path = "$Env:AGENT_RELEASEDIRECTORY";
 
     $files = Get-ChildItem $path;
