@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "new-build-tasks-arti",
     "name": "Fork of Deployment Framework for BizTalk",
-    "version": "2.6.1",
+    "version": "2.6.2",
     "publisher": "Mikael-Bohlin-Liljekvist",
     "targets": [
         {

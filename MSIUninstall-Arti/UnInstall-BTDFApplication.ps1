@@ -34,9 +34,10 @@ $files = Get-ChildItem $path;
 $IsLastNodeVal = IsLastNode;
 [System.Convert]::ToBoolean($ShouldRunOnLastNode);
 [System.Convert]::ToBoolean($IsLastNodeVal);
-Write-Host $IsLastNodeVal;
-Write-Host $ShouldRunOnLastNode;
+Write-Host "IsLastNodeVal: " + $IsLastNodeVal;
+Write-Host "ShouldRunOnLastNode: " + $ShouldRunOnLastNode;
 if($IsLastNodeVal -eq $ShouldRunOnLastNode){
+    Write-Host "Running on node " + $env:computername;
     foreach ($Product in $files){
 
         $InstallGuid = [Guid]::Empty

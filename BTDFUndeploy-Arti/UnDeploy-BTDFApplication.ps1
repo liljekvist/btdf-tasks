@@ -64,9 +64,10 @@ function Test-BTDFApplicationDeployed {
 $IsLastNodeVal = IsLastNode;
 [System.Convert]::ToBoolean($ShouldRunOnLastNode);
 [System.Convert]::ToBoolean($IsLastNodeVal);
-Write-Host $IsLastNodeVal;
-Write-Host $ShouldRunOnLastNode;
+Write-Host "IsLastNodeVal: " + $IsLastNodeVal;
+Write-Host "ShouldRunOnLastNode: " + $ShouldRunOnLastNode;
 if($IsLastNodeVal -eq $ShouldRunOnLastNode){
+    Write-Host "Running on node " + $env:computername;
 
 	$path = "$Env:AGENT_RELEASEDIRECTORY";
 
@@ -74,6 +75,7 @@ if($IsLastNodeVal -eq $ShouldRunOnLastNode){
 	for(($i = 0); $i -lt $RunOrderArray.count; $i++){
 
 		$CurrentWord = $RunOrderArray[$i];
+		Write-Host $CurrentWord;
 
 		foreach ($Name in $files){
 
@@ -122,6 +124,10 @@ if($IsLastNodeVal -eq $ShouldRunOnLastNode){
 						Write-Host ("##vso[task.logissue type=warning;] BTDF application '{0}' not found at {1}.  Undeploy skipped." -f $Name,$ApplicationPath)
 					}
 				}
+			}
+
+			else {
+				Write-Host "Not a match!";
 			}
 		}
 	}

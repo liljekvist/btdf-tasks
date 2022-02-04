@@ -43,9 +43,10 @@ $RunOrderArray = $RunOrder.split(",")
 $IsLastNodeVal = IsLastNode;
 [System.Convert]::ToBoolean($ShouldRunOnLastNode);
 [System.Convert]::ToBoolean($IsLastNodeVal);
-Write-Host $IsLastNodeVal;
-Write-Host $ShouldRunOnLastNode;
+Write-Host "IsLastNodeVal: " + $IsLastNodeVal;
+Write-Host "ShouldRunOnLastNode: " + $ShouldRunOnLastNode;
 if($IsLastNodeVal -eq $ShouldRunOnLastNode){
+    Write-Host "Running on node " + $env:computername;
     $path = "$Env:AGENT_RELEASEDIRECTORY";
 
     $files = Get-ChildItem $path;
@@ -53,7 +54,7 @@ if($IsLastNodeVal -eq $ShouldRunOnLastNode){
     for(($i = 0); $i -lt $RunOrderArray.count; $i++){
 
         $CurrentWord = $RunOrderArray[$i];
-
+        Write-Host $CurrentWord;
         foreach ($Name in $files){
 
             if($Name -Match $CurrentWord){
@@ -113,6 +114,9 @@ if($IsLastNodeVal -eq $ShouldRunOnLastNode){
                 }
 
             }
+            else {
+				Write-Host "Not a match!";
+			}
         }
     }
 }
