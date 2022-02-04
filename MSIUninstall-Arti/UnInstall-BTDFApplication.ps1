@@ -32,8 +32,8 @@ $path = "$Env:AGENT_RELEASEDIRECTORY";
 
 $files = Get-ChildItem $path;
 $IsLastNodeVal = IsLastNode;
-[System.Convert]::ToBoolean($ShouldRunOnLastNode);
-[System.Convert]::ToBoolean($IsLastNodeVal);
+$ShouldRunOnLastNode = [System.Convert]::ToBoolean($ShouldRunOnLastNode);
+$IsLastNodeVal = [System.Convert]::ToBoolean($IsLastNodeVal);
 Write-Host "IsLastNodeVal: " + $IsLastNodeVal;
 Write-Host "ShouldRunOnLastNode: " + $ShouldRunOnLastNode;
 if($IsLastNodeVal -eq $ShouldRunOnLastNode){
