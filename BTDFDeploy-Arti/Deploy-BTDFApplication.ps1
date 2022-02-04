@@ -40,7 +40,7 @@ function IsLastNode {
 $RunOrderArray = $RunOrder.split(",")
 # "Shared", "INT", "LAB", "TEST"
 
-$IsLastNodeVal = IsLastNode();
+$IsLastNodeVal = IsLastNode;
 [System.Convert]::ToBoolean($ShouldRunOnLastNode);
 [System.Convert]::ToBoolean($IsLastNodeVal);
 Write-Host $IsLastNodeVal;

@@ -31,7 +31,7 @@ function IsLastNode {
 $path = "$Env:AGENT_RELEASEDIRECTORY";
 
 $files = Get-ChildItem $path;
-$IsLastNodeVal = IsLastNode();
+$IsLastNodeVal = IsLastNode;
 [System.Convert]::ToBoolean($ShouldRunOnLastNode);
 [System.Convert]::ToBoolean($IsLastNodeVal);
 Write-Host $IsLastNodeVal;

@@ -34,7 +34,7 @@ $path = "$Env:AGENT_RELEASEDIRECTORY";
 $files = Get-ChildItem $path;
 
 $staticDest = $Destination
-$IsLastNodeVal = IsLastNode();
+$IsLastNodeVal = IsLastNode;
 [System.Convert]::ToBoolean($ShouldRunOnLastNode);
 [System.Convert]::ToBoolean($IsLastNodeVal);
 Write-Host $IsLastNodeVal;

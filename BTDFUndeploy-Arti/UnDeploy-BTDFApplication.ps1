@@ -61,7 +61,7 @@ function Test-BTDFApplicationDeployed {
 }
 
 
-$IsLastNodeVal = IsLastNode();
+$IsLastNodeVal = IsLastNode;
 [System.Convert]::ToBoolean($ShouldRunOnLastNode);
 [System.Convert]::ToBoolean($IsLastNodeVal);
 Write-Host $IsLastNodeVal;
