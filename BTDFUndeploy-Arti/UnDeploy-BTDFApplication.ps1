@@ -66,7 +66,12 @@ $ShouldRunOnLastNode = [System.Convert]::ToBoolean($ShouldRunOnLastNode);
 $IsLastNodeVal = [System.Convert]::ToBoolean($IsLastNodeVal);
 Write-Host "IsLastNodeVal: " + $IsLastNodeVal;
 Write-Host "ShouldRunOnLastNode: " + $ShouldRunOnLastNode;
-if($IsLastNodeVal -eq $ShouldRunOnLastNode){
+
+$t = [bool]$IsLastNodeVal -eq [bool]$ShouldRunOnLastNode;
+
+Write-Host "Will run: $t";
+
+if($t){
     Write-Host "Running on node " + $env:computername;
 
 	$path = "$Env:AGENT_RELEASEDIRECTORY";
