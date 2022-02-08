@@ -43,14 +43,12 @@ $RunOrderArray = $RunOrder.split(",")
 $IsLastNodeVal = IsLastNode;
 $ShouldRunOnLastNode = [System.Convert]::ToBoolean($ShouldRunOnLastNode);
 $IsLastNodeVal = [System.Convert]::ToBoolean($IsLastNodeVal);
-Write-Host "IsLastNodeVal: " + $IsLastNodeVal;
-Write-Host "ShouldRunOnLastNode: " + $ShouldRunOnLastNode;
+$ShouldRunOnLastNode2 = [System.Convert]::ToBoolean($ShouldRunOnLastNode);
+$IsLastNodeVal2 = [System.Convert]::ToBoolean($IsLastNodeVal);
+Write-Host "IsLastNodeVal: " + $IsLastNodeVal2;
+Write-Host "ShouldRunOnLastNode: " + $ShouldRunOnLastNode2;
 
-$t = [bool]$IsLastNodeVal -eq [bool]$ShouldRunOnLastNode;
-
-Write-Host "Will run: $t";
-
-if($t){
+if($IsLastNodeVal2.equals($ShouldRunOnLastNode2)){
     Write-Host "Running on node " + $env:computername;
     $path = "$Env:AGENT_RELEASEDIRECTORY";
 
